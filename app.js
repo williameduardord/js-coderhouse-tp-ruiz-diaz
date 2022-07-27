@@ -1,25 +1,17 @@
-let nu = prompt("ingrese la cantidad de notas a promediar");
-let num = parseInt(nu);
-let nota = 0;
-let suma=0;
-let nott=0;
-let promedio=0;
-let i = 0;
-let salir="esc";
-
-while (i < num && nota != salir) {
-    nota = prompt("ingrese nota " + (i+1) + "  o esc para interrumpir el calculo");
-    nott = parseInt(nota);
-    suma = suma + nott;
-    i = i + 1;
-    console.log(i);
-    promedio = suma /num;
-    console.log(suma);
+function interesCompuesto(monto,tiempo,taza,ciclo){
+    let interes;
+    let i = 0 ;
+    let pagos=tiempo/ciclo ;
+    let saldo=monto;
+    while (i< pagos){
+        interes = ( (saldo * ciclo * taza)/(100*365));
+        saldo = saldo + interes;
+        i = i+1;
+    }
+return saldo;
 }
-if (nota != salir){
-    alert("El promedio es " + promedio);
-    console.log(promedio);
-    
-}else if (nota = salir){
-    alert("As interrumpido el calculo"); 
-}
+let monto = parseFloat(prompt("Ingrese el monto de dinero"));
+let tiempo = parseFloat(prompt("Ingrese el el tiempo total a del deposito"));
+let taza = parseFloat(prompt("Ingrese la taza de interes"));
+let ciclo = parseFloat(prompt("Ingrese la perioricidad de tiempo con la que se realizaran los pagos"));
+alert(interesCompuesto(monto,tiempo,taza,ciclo));
