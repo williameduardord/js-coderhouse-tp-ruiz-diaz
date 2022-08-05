@@ -1,17 +1,35 @@
-function interesCompuesto(monto,tiempo,taza,ciclo){
-    let interes;
-    let i = 0 ;
-    let pagos=tiempo/ciclo ;
-    let saldo=monto;
-    while (i< pagos){
-        interes = ( (saldo * ciclo * taza)/(100*365));
-        saldo = saldo + interes;
-        i = i+1;
-    }
-return saldo;
+/*const precios = ["BTC", "ETH", "ADA", "IOT", "DOT", "VET", ]*/
+
+const cotizaciones = [{
+    "symbol": "ETHBTC",
+    "price": "0.07051000"
+}, {
+    "symbol": "LTCBTC",
+    "price": "0.00254700"
+}, {
+    "symbol": "BNBBTC",
+    "price": "0.01290300"
+}, {
+    "symbol": "BNBETH",
+    "price": "0.18300000"
+}, {
+    "symbol": "BTCUSDT",
+    "price": "23451.20000000"
+}, {
+    "symbol": "ETHUSDT",
+    "price": "1653.50000000"
+}]
+
+let mostrar = 0;
+
+for (let i = 0; i < cotizaciones.length; i++) {
+    console.log(mostrar = (cotizaciones[i].symbol)+"  " + (cotizaciones[i].price));
+    
 }
-let monto = parseFloat(prompt("Ingrese el monto de dinero"));
-let tiempo = parseFloat(prompt("Ingrese el el tiempo total a del deposito"));
-let taza = parseFloat(prompt("Ingrese la taza de interes"));
-let ciclo = parseFloat(prompt("Ingrese la perioricidad de tiempo con la que se realizaran los pagos"));
-alert(interesCompuesto(monto,tiempo,taza,ciclo));
+
+for (const price of cotizaciones) {
+    console.log(price.price);
+}
+for (const symbol of cotizaciones) {
+    console.log(symbol.symbol);
+}
