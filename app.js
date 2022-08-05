@@ -23,8 +23,7 @@ const cotizaciones = [{
 let mostrar = 0;
 
 for (let i = 0; i < cotizaciones.length; i++) {
-    console.log(mostrar = (cotizaciones[i].symbol)+"  " + (cotizaciones[i].price));
-    
+    console.log(mostrar = (cotizaciones[i].symbol)+"  " + (cotizaciones[i].price));   
 }
 
 for (const price of cotizaciones) {
