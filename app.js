@@ -1,5 +1,3 @@
-/*const precios = ["BTC", "ETH", "ADA", "IOT", "DOT", "VET", ]*/
-
 const cotizaciones = [{
     "symbol": "ETHBTC",
     "price": "0.07051000"
@@ -20,15 +18,16 @@ const cotizaciones = [{
     "price": "1653.50000000"
 }]
 
-let mostrar = 0;
+let consulta = prompt("ELIJA EL PAR PARA VER SU COTIZACION " +" ETHBTC  LTCBTC  BNBBTC  BTCUSDT  ETHUSDT");
+let mostrar = "";
 
-for (let i = 0; i < cotizaciones.length; i++) {
-    console.log(mostrar = (cotizaciones[i].symbol)+"  " + (cotizaciones[i].price));   
-}
 
-for (const price of cotizaciones) {
-    console.log(price.price);
+function bus(a) {
+    let i = 0;
+    while (a != cotizaciones[i].symbol) {
+        i = i + 1;
+    }
+    return i;
 }
-for (const symbol of cotizaciones) {
-    console.log(symbol.symbol);
-}
+console.log(" Ultima Cotizacion  " + (cotizaciones[bus(consulta)].symbol) + "=" + (cotizaciones[bus(consulta)].price));
+prompt(" Ultima Cotizacion  " + (cotizaciones[bus(consulta)].symbol) + "=" + (cotizaciones[bus(consulta)].price));
